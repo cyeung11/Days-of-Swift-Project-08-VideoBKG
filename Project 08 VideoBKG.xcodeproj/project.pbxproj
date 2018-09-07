@@ -12,6 +12,7 @@
 		831369BB2142AFE9008041E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831369B92142AFE9008041E0 /* Main.storyboard */; };
 		831369BD2142AFEA008041E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831369BC2142AFEA008041E0 /* Assets.xcassets */; };
 		831369C02142AFEA008041E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831369BE2142AFEA008041E0 /* LaunchScreen.storyboard */; };
+		831369CA2142B779008041E0 /* moments.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 831369C72142B305008041E0 /* moments.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		831369BC2142AFEA008041E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		831369BF2142AFEA008041E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		831369C12142AFEA008041E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		831369C72142B305008041E0 /* moments.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = moments.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				831369B92142AFE9008041E0 /* Main.storyboard */,
 				831369BC2142AFEA008041E0 /* Assets.xcassets */,
 				831369BE2142AFEA008041E0 /* LaunchScreen.storyboard */,
+				831369C72142B305008041E0 /* moments.mp4 */,
 				831369C12142AFEA008041E0 /* Info.plist */,
 			);
 			path = "Project 08 VideoBKG";
@@ -122,6 +125,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				831369CA2142B779008041E0 /* moments.mp4 in Resources */,
 				831369C02142AFEA008041E0 /* LaunchScreen.storyboard in Resources */,
 				831369BD2142AFEA008041E0 /* Assets.xcassets in Resources */,
 				831369BB2142AFE9008041E0 /* Main.storyboard in Resources */,
@@ -283,6 +287,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QUVTA8Q65R;
 				INFOPLIST_FILE = "Project 08 VideoBKG/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,6 +306,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QUVTA8Q65R;
 				INFOPLIST_FILE = "Project 08 VideoBKG/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
