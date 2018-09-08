@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KNk-78-PmA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,10 +13,50 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Opening View Controller-->
+        <scene sceneID="619-zm-9q9">
+            <objects>
+                <viewController id="KNk-78-PmA" customClass="OpeningViewController" customModule="Project_08_VideoBKG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="BIo-vS-CXL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXe-LD-xU2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.24313725489999999" green="0.31372549020000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="ter-Gg-4oP">
+                                <rect key="frame" x="137.5" y="293.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="HPQ-Uo-PGe"/>
+                                    <constraint firstAttribute="width" secondItem="ter-Gg-4oP" secondAttribute="height" multiplier="1:1" id="hWS-Fy-pG2"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="H7f-Hm-THH" firstAttribute="bottom" secondItem="IXe-LD-xU2" secondAttribute="bottom" id="29v-zf-f94"/>
+                            <constraint firstItem="IXe-LD-xU2" firstAttribute="top" secondItem="BIo-vS-CXL" secondAttribute="top" id="6fd-QE-nC5"/>
+                            <constraint firstItem="H7f-Hm-THH" firstAttribute="trailing" secondItem="IXe-LD-xU2" secondAttribute="trailing" id="BZF-Zc-Aio"/>
+                            <constraint firstItem="ter-Gg-4oP" firstAttribute="centerX" secondItem="H7f-Hm-THH" secondAttribute="centerX" id="hs6-ht-g1Y"/>
+                            <constraint firstItem="IXe-LD-xU2" firstAttribute="leading" secondItem="H7f-Hm-THH" secondAttribute="leading" id="p0h-RV-4Sb"/>
+                            <constraint firstItem="ter-Gg-4oP" firstAttribute="centerY" secondItem="H7f-Hm-THH" secondAttribute="centerY" id="rhL-PX-xSG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="H7f-Hm-THH"/>
+                    </view>
+                    <connections>
+                        <outlet property="bkg" destination="IXe-LD-xU2" id="PFU-Sf-95X"/>
+                        <outlet property="fbIcon" destination="ter-Gg-4oP" id="dDh-I7-7N9"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="opening" id="XGu-du-h5r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FuS-IU-Vrq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-631" y="38"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Project_08_VideoBKG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -97,10 +137,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="fbIcon" destination="eUr-Hr-D9Z" id="wbK-cX-Uia"/>
                         <outlet property="signin" destination="vZT-Lq-9MI" id="kSO-xc-mAz"/>
                         <outlet property="signup" destination="hLc-5n-iMA" id="Dfu-Rg-bw9"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
