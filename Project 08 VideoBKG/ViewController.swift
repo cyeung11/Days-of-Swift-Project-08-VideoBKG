@@ -10,7 +10,7 @@ import UIKit
 import AVKit
 import MediaPlayer
 
-class ViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning  {
+class ViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, UITextFieldDelegate{
     
     let playerVC = AVPlayerViewController()
     let url = Bundle.main.url(forResource: "moments", withExtension: "mp4")
@@ -27,10 +27,39 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         }
     }
     
+    @IBOutlet weak var inputStackView: UIStackView!
+    @IBOutlet weak var emailField: UITextField!{
+        didSet{
+            emailField.delegate = self
+            emailField.returnKeyType = .next
+        }
+    }
+    @IBOutlet weak var passwordField: UITextField!{
+        didSet{
+            passwordField.delegate = self
+            passwordField.returnKeyType = .continue
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case emailField:
+            passwordField.becomeFirstResponder()
+            return false
+        case passwordField:
+            passwordField.resignFirstResponder()
+            return false
+        default:
+            return true
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         transitioningDelegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
         
         if let url = url{
             let player = AVPlayer(url: url)
@@ -56,6 +85,38 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
+    }
+    
+    @objc func keyboardWillShow(_ notification: NSNotification){
+        if let keyboardHeight = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
+            
+            if emailField.isEditing{
+                let bottomSpace = view.bounds.height - emailField.frame.maxY - inputStackView.frame.minY
+                
+                if  bottomSpace < keyboardHeight{
+                    UIView.animate(withDuration: 0.2) {
+                        self.view.frame.origin.y = bottomSpace - keyboardHeight - 5
+                    }
+                }
+            } else if passwordField.isEditing{
+                let bottomSpace = view.bounds.height - passwordField.frame.maxY - inputStackView.frame.minY
+                
+                if  bottomSpace < keyboardHeight{
+                    UIView.animate(withDuration: 0.2) {
+                        self.view.frame.origin.y = bottomSpace - keyboardHeight - 5
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: NSNotification){
+        if view.frame.origin.y < 0{
+            UIView.animate(withDuration: 0.2) {
+                self.view.frame.origin.y = 0
+            }
+        }
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {

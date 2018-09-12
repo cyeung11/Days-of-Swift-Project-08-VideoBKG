@@ -137,7 +137,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="emailField" destination="3rA-pb-r15" id="6uf-Jm-HVX"/>
                         <outlet property="fbIcon" destination="eUr-Hr-D9Z" id="wbK-cX-Uia"/>
+                        <outlet property="inputStackView" destination="C2l-lG-C2o" id="2JA-BV-yMR"/>
+                        <outlet property="passwordField" destination="1up-Af-Ayv" id="sFf-sg-G7Z"/>
                         <outlet property="signin" destination="vZT-Lq-9MI" id="kSO-xc-mAz"/>
                         <outlet property="signup" destination="hLc-5n-iMA" id="Dfu-Rg-bw9"/>
                     </connections>
